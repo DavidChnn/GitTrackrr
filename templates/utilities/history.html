@@ -1,0 +1,77 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    {% tailwind_css %}
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    {% block section %}
+    {% include "component/navbar_logged.html" %}
+    {% endblock %}
+    <!-- Navbar End -->
+
+    <!-- Content Start -->
+    <div class="flex justify-end pr-32 ">
+        <input type="text" class="w-96 border border-gray-300 rounded-lg p-2" placeholder="Search..">
+    </div>
+    <div class="py-4 mt-12 px-28">
+        
+    </div>
+    <div class="py-4 px-28">
+        <h1 class="text-black text-2xl font-medium py-2 ml-2">
+            Recently
+        </h1>
+        <div class="flex flex-wrap">
+            {% for folder in folders %}
+            <div class="bg-sky-100 px-4 py-2 w-full rounded-xl shadow-lg m-2 relative">
+                <a href="{% url 'add_repository_with_folder' folder_id=folder.FolderID %}" class="block">
+                    <div class="flex flex-col justify-between">
+                        <div class="flex items-center">
+                            <h1 class="text-black text-xl font-medium">Folder name: <b>{{ folder.Folder_Name }}</b> </h1>
+                        </div>
+                        <div class="flex items-center">
+                            <p>Created at: <b>{{ folder.Created_At|date:"d F Y" }}</b></p>
+                        </div>
+                        <div class="">
+                            <p class="text-black text-xl font-bold leading-9 py-2">
+                                Repositories List:
+                            </p>
+                            <ul class="list-disc text-black text-xs font-normal px-5">
+                                {% for repository in folder.repository_set.all %}
+                                <li>
+                                    {{ repository.Owner }} / {{ repository.Repository_Name }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+                <!-- Tombol Hapus Folder -->
+                <form method="post" action="{% url 'delete_folder' folder.FolderID %}" class="absolute top-2 right-2">
+                    {% csrf_token %}
+                    <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-full text-sm">Hapus Folder</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const dropdownButton = document.querySelector(".group");
+                const dropdownMenu = document.querySelector(".absolute");
+
+                dropdownButton.addEventListener("click", function () {
+                    dropdownMenu.classList.toggle("hidden");
+                });
+            });
+        </script>
+</body>
+
+</html>
