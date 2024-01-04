@@ -88,11 +88,11 @@ WSGI_APPLICATION = 'gittrackr.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'gittrackr_thoughmost',
-        'USER': 'gittrackr_thoughmost',
-        'PASSWORD': 'a0b871afa87e5d45794ef63cb7d80cb5a8b2950a',
-        'PORT': 3307,
-        'HOST': 'g1y.h.filess.io',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'gc*bFD*da*455e*dDgeB1F1E33-41B3f',
+        'PORT': 12603,
+        'HOST': 'viaduct.proxy.rlwy.net',
     }
 }
 
