@@ -20,8 +20,12 @@
         "dest": "/static/$1"
       },
       {
-        "src": "/",
+        "src": "/(.*)",
         "dest": "GitTrackrr/wsgi.py"
+      },
+      {
+        "src": "/",
+        "dest": "/"
       }
     ]
   }
