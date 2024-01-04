@@ -13,14 +13,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'django-insecure-9($^k-*a4f*fm+-dz!!+rr75wq5c&0tr7ym%6(f#_jec3t5u15'
+SECRET_KEY += os.environ.get('SECRET_KEY')
 
 GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", ".vercel.app", ".now.sh"]
 ALLOWED_HOSTS += os.environ.get("ALLOWED_HOSTS").split()
 
 # Application definition
