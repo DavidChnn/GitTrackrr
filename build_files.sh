@@ -2,11 +2,11 @@
 pip install -r requirements.txt
 
 # collect static files
-python manage.py collectstatic
+python3.9 manage.py collectstatic
 
 # install tailwindCSS
-python manage.py tailwind install
+python3.9 manage.py tailwind install
 
 # migrate database
-python manage.py makemigrations
-python manage.py migrate
+python3.9 manage.py makemigrations
+python3.9 manage.py migrate
