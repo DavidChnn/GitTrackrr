@@ -1,3 +1,6 @@
+# install env
+pip install python-dotenv
+
 # install depedencies
 pip install -r requirements.txt
 

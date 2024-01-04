@@ -13,14 +13,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9($^k-*a4f*fm+-dz!!+rr75wq5c&0tr7ym%6(f#_jec3t5u15'
+SECRET_KEY += os.environ.get('SECRET_KEY')
 
-GITHUB_TOKEN = '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'
+GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", ".vercel.app", ".now.sh"]
+ALLOWED_HOSTS += os.environ.get("ALLOWED_HOSTS").split()
 
 # Application definition
 
@@ -87,7 +88,7 @@ WSGI_APPLICATION = 'gittrackr.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': '',
         'NAME': 'gittrackr_thoughmost',
         'USER': 'gittrackr_thoughmost',
         'PASSWORD': 'a0b871afa87e5d45794ef63cb7d80cb5a8b2950a',
