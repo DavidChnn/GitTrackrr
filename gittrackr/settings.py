@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'gittrackr.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'gittrackr_thoughmost',
         'USER': 'gittrackr_thoughmost',
         'PASSWORD': 'a0b871afa87e5d45794ef63cb7d80cb5a8b2950a',
