@@ -21,7 +21,6 @@ GITHUB_TOKEN = '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'
 DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", ".vercel.app", ".now.sh"]
-ALLOWED_HOSTS += os.environ.get("ALLOWED_HOSTS").split()
 
 # Application definition
 
