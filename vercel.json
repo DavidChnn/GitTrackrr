@@ -23,5 +23,7 @@
         "src": "/(.*)",
         "dest": "GitTrackrr/wsgi.py"
       }
-    ]
+    ],
+
+    "outputDirectory": "staticfiles_build"
   }
