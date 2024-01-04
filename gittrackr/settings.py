@@ -87,9 +87,14 @@ WSGI_APPLICATION = 'gittrackr.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default="sqlite:///" + os.path.join(BASE_DIR, "db.sqlite3")
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'gittrackr_thoughmost',
+        'USER': 'gittrackr_thoughmost',
+        'PASSWORD': 'a0b871afa87e5d45794ef63cb7d80cb5a8b2950a',
+        'PORT': 3307,
+        'HOST': 'g1y.h.filess.io',
+    }
 }
 
 BEHAVE = {
